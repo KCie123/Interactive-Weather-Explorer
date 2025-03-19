@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 240, 245, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    )
+    fixed;
+}
+
+.weather-service .search-input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.weather-service .search-button {
+  @apply mt-2 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors;
+}
+
+.weather-service .location-results {
+  @apply mt-4;
+}
+
+.weather-service .location-results h3 {
+  @apply text-lg font-medium mb-2;
+}
+
+.weather-service .location-results ul {
+  @apply space-y-1;
+}
+
+.weather-service .location-results li {
+  @apply px-3 py-2 rounded-md cursor-pointer hover:bg-blue-50;
+}
+
+.weather-service .location-results li.selected {
+  @apply bg-blue-100 font-medium;
+}
+
+.weather-service .loading {
+  @apply mt-4 text-center text-gray-600;
+}
+
+.weather-service .error {
+  @apply mt-4 text-center text-red-600;
+}
+
+.weather-detail {
+  @apply flex flex-col;
+}
+
+.weather-detail span:first-child {
+  @apply text-sm;
+}
+
+/* Map container styles */
+.map-container {
+  @apply h-full w-full rounded-lg overflow-hidden;
+}
+
+/* Chart styles */
+.chart-container {
+  @apply h-full w-full;
+}
+
+/* Weather card styles */
+.weather-card {
+  @apply bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-[1.02];
+}
+
+.weather-card-header {
+  @apply p-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white;
+}
+
+.weather-card-body {
+  @apply p-4;
+}
+
+/* Daily forecast item */
+.daily-forecast-item {
+  @apply flex items-center justify-between p-3 border-b border-gray-100 last:border-0;
+}
+
+/* Hourly forecast item */
+.hourly-forecast-item {
+  @apply flex flex-col items-center p-2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-300 rounded-full hover:bg-blue-400;
+}
